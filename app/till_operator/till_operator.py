@@ -6,7 +6,7 @@ import re
 from pymongo import MongoClient
 
 
-class OperatorWindow(Screen):
+class OperatorWindow(BoxLayout, Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         client = MongoClient()
@@ -17,6 +17,12 @@ class OperatorWindow(Screen):
 
         self.qty = []
         self.total = 0.00
+
+    def logout(self):
+        self.parent.current = "SigninWindow"
+
+    def admin(self):
+        self.parent.current = "AdminWindow"
 
     def update_purchases(self):
         pcode = self.ids.code_inp.text

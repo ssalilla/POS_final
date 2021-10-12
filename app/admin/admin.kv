@@ -23,26 +23,17 @@
                 pos: self.pos
         
         FlatButton:
-            id: file_trigger
-            text: 'File'
-            on_release: file_dropdown.open(self)
-            size_hint: (.1,None)
-            height: 30
+            id: back
+            text: 'Back'
+            size_hint_x: 0.1
+            color: (1,1,1,1)
+            on_release: root.operator()
 
-            Widget:
-                on_parent: file_dropdown.dismiss()
-            
-                DropDown:
-                    id: file_dropdown
-                    Button:
-                        id: close
-                        text: 'quit'
-                        size_hint_y: None
-                        height: 30
+
         Label:
             text: 'Admin Dashboard'
             bold: True
-            size_hint: (.9,None)
+            size_hint_x: 0.9
             height: 30
     BoxLayout:
         id: content_nav

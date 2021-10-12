@@ -2,7 +2,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import Screen
 
 
-class SigninWindow(Screen):
+class SigninWindow(BoxLayout, Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 

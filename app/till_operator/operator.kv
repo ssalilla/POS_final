@@ -27,9 +27,11 @@
             bold: True
             color: (1,1,1,1)
         FlatButton:
-            id: loggedin_user
-            text: 'jdoe'
+            id: logout
+            text: 'Logout'
+            size_hint_x: .1
             color: (1,1,1,1)
+            on_release: root.logout()
 
     BoxLayout:
         id: current
@@ -185,3 +187,12 @@
                 size: self.size
         Label:
             text: 'Creatus Corp.'
+            size_hint_x: .9
+            bold: True
+            color: (1,1,1,1)
+        FlatButton:
+            id: Admin
+            text: 'Admin'
+            size_hint_x: .1
+            color: (1,1,1,1)
+            on_release: root.admin()

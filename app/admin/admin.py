@@ -27,7 +27,7 @@ class Notify(ModalView):
         self.size_hint = (.7, .7)
 
 
-class AdminWindow(Screen):
+class AdminWindow(BoxLayout, Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         client = MongoClient()
@@ -62,6 +62,9 @@ class AdminWindow(Screen):
         products = self.get_products()
         prod_table = DataTableWindow(table=products)
         product_scrn.add_widget(prod_table)
+
+    def operator(self):
+        self.parent.current = "OperatorWindow"
 
     def add_user_fields(self):
         target = self.ids.ops_fields
